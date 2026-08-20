@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="海薪通面向中国船东、船舶管理公司和中国船员，提供船员薪资发放、U卡全球消费取现、多币种账户、家汇与银行直付。">
+    <title>海薪通 | 中国船东与船员薪资发放平台</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="pay-crew.css">
+  </head>
+  <body>
+    <div class="announcement">
+      <p>U卡支持全球消费和 ATM 取现，覆盖几十个国家与几十种币种</p>
+      <a href="#demo">立即咨询</a>
+    </div>
+
+    <div class="header-shell" data-header="">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="海薪通首页">
+          <span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>海薪通</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false" data-nav-toggle=""><span></span><span></span></button>
+        <nav class="site-nav" aria-label="主导航" data-nav="">
+          <a href="#platform">船员支付</a>
+          <a href="#crew-account">船员账户</a>
+          <a href="#u-card">U卡服务</a>
+          <a href="#coverage">国家与币种</a>
+          <a href="#faq">资源中心</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="login-link" href="#crew-account">船员登录</a>
+          <a class="nav-cta" href="#demo">预约演示</a>
+          <span class="search-icon" aria-hidden="true"></span>
+        </div>
+      </header>
+    </div>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <div class="hero-copy" data-reveal="">
+            <h1 id="hero-title">为您的<span>船员</span>提供可靠且精准的<br>薪酬发放服务</h1>
+            <p>通过海薪通简化船员薪酬发放，<br>确保随时随地顺畅支付</p>
+            <form class="lead-form hero-form" id="demo" data-demo-form="">
+              <label class="sr-only" for="hero-email">您的工作邮箱</label>
+              <input id="hero-email" name="email" type="email" placeholder="您的工作邮箱" autocomplete="email" required="">
+              <button type="submit">预约演示</button>
+              <span class="form-status" role="status" data-form-status=""></span>
+            </form>
+            <p class="crew-prompt">您是船员吗？ <a href="#crew-account">探索船员专属账户与 U 卡福利</a></p>
+          </div>
+          <div class="hero-trust" data-reveal="">
+            <div class="trust-item">
+              <span class="trust-icon" aria-hidden="true">
+                <svg class="line-icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+              </span>
+              <p>合规支付流程<br>审批与回单全程留痕</p>
+            </div>
+            <div class="trust-item">
+              <span class="trust-icon global-payment-icon" aria-hidden="true">
+                <svg class="line-icon" viewBox="0 0 24 24">
+                  <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                  <path d="M3.5 8h14M3.5 13h10M10.5 3c2.1 2.1 3.1 4.6 3.1 7.5 0 1.1-.2 2.2-.5 3.2M10.5 3C8.4 5.1 7.4 7.6 7.4 10.5c0 2.9 1 5.4 3.1 7.5"></path>
+                  <circle cx="17.5" cy="17.5" r="4.25"></circle>
+                  <path d="M17.5 14.8v5.4M19.2 16c-.3-.7-.9-1-1.7-1-1 0-1.7.5-1.7 1.2 0 .8.7 1.1 1.7 1.3 1 .2 1.7.5 1.7 1.3 0 .7-.7 1.2-1.7 1.2-.8 0-1.5-.3-1.8-.9"></path>
+                </svg>
+              </span>
+              <p>支持几十个国家/地区<br>与几十种付款币种</p>
+            </div>
+            <div class="trust-item">
+              <span class="trust-icon" aria-hidden="true">
+                <svg class="line-icon" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"></rect><path d="M2 10h20M15 15h3"></path><path d="M10 14v6m-3-3 3 3 3-3"></path></svg>
+              </span>
+              <p>U卡支持全球消费<br>与 ATM 网络取现</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="平台能力">
+        <div><span class="stat-card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 10h.01M18 14h.01M12 2v4m-3-3 3 3 3-3"></path></svg></span><strong>80%</strong><span class="stat-copy">目标减少<br>船上现金</span></div>
+        <div><span class="icon-marquee stat-icons" aria-label="支持中国、美国、欧盟、日本、新加坡、英国、菲律宾、韩国、澳大利亚、印度等国家与地区"><span class="icon-marquee-track country-icons"><span class="icon-marquee-set"><i class="country-flag flag-cn"></i><i class="country-flag flag-us"></i><i class="country-flag flag-eu"></i><i class="country-flag flag-jp"></i><i class="country-flag flag-sg"></i><i class="country-flag flag-gb"></i><i class="country-flag flag-ph"></i><i class="country-flag flag-kr"></i><i class="country-flag flag-au"></i><i class="country-flag flag-in"></i></span><span class="icon-marquee-set" aria-hidden="true"><i class="country-flag flag-cn"></i><i class="country-flag flag-us"></i><i class="country-flag flag-eu"></i><i class="country-flag flag-jp"></i><i class="country-flag flag-sg"></i><i class="country-flag flag-gb"></i><i class="country-flag flag-ph"></i><i class="country-flag flag-kr"></i><i class="country-flag flag-au"></i><i class="country-flag flag-in"></i></span></span></span><strong>几十个</strong><span class="stat-copy">国家与地区<br>支付覆盖</span></div>
+        <div><span class="icon-marquee stat-icons" aria-label="支持人民币、美元、欧元、菲律宾比索、新加坡元、英镑、韩元、澳元、印度卢比、港币等币种"><span class="icon-marquee-track currency-icons"><span class="icon-marquee-set"><i>¥</i><i>$</i><i>€</i><i>₱</i><i class="long-symbol">S$</i><i>£</i><i>₩</i><i class="long-symbol">A$</i><i>₹</i><i class="long-symbol">HK$</i></span><span class="icon-marquee-set" aria-hidden="true"><i>¥</i><i>$</i><i>€</i><i>₱</i><i class="long-symbol">S$</i><i>£</i><i>₩</i><i class="long-symbol">A$</i><i>₹</i><i class="long-symbol">HK$</i></span></span></span><strong>几十种</strong><span class="stat-copy">工资、结算<br>与消费币种</span></div>
+        <div><span class="stat-card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"></rect><path d="M2 10h20M15 15h3"></path></svg></span><strong>U卡</strong><span class="stat-copy">全球消费<br>与 ATM 取现</span></div>
+      </section>
+
+      <section class="client-strip" aria-label="适用客户">
+        <span>服务于</span><b>中国船东</b><b>船舶管理公司</b><b>远洋船队</b><b>船员外派机构</b><b>财务共享中心</b>
+      </section>
+
+      <section class="platform" id="platform" aria-labelledby="platform-title">
+        <div class="display-title" data-reveal=""><h2 id="platform-title">完整 <span>船员支付</span> 平台</h2></div>
+        <div class="platform-grid">
+          <article class="product-tile account-tile" data-reveal="">
+            <div class="product-visual">
+              <div class="app-phone compact-phone" aria-hidden="true">
+                <div class="phone-bar"><span></span><b>海薪通</b><i>CNY</i></div>
+                <p>可用余额</p><strong>¥ 48,620.00</strong>
+                <div class="round-actions"><i>汇</i><i>兑</i><i>卡</i></div>
+                <div class="app-list"><span>本月工资 <b>+ USD 4,200</b></span><span>汇给家人 <b>- CNY 8,000</b></span><span>U卡消费 <b>- SGD 68</b></span></div>
+              </div>
+              <div class="cash-metric"><span>至少</span><strong>80%</strong><b>减少船上现金</b></div>
+            </div>
+            <div class="tile-copy"><h3>船员账户支付</h3><p>将全球船员工资直接支付到船员账户，减少现金上船、人工签收和港口代理垫款。</p></div>
+          </article>
+          <article class="product-tile bank-tile" data-reveal="">
+            <div class="product-visual">
+              <div class="web-app" aria-hidden="true">
+                <div class="web-top"><b>海薪通</b><span>Payments</span><i>Batch ready</i></div>
+                <div class="web-body"><aside><span>Home</span><b>Payments</b><span>Crew</span><span>Reports</span></aside><div class="batch-ui"><p>Payment batch</p><strong>八月船员工资</strong><div><span>远洋轮 HXT Fortune</span><b>USD 118,400</b></div><div><span>船员人数</span><b>63</b></div><div><span>付款状态</span><b class="paid">Ready</b></div><button type="button" tabindex="-1">提交审批</button></div></div>
+              </div>
+            </div>
+            <div class="tile-copy"><h3>直接银行支付</h3><p>向船员或家属银行账户发起合规跨境付款，以多币种路径降低银行和外汇成本。</p></div>
+          </article>
+        </div>
+        <a class="primary-button center-button" href="#crew-account">立即体验</a>
+      </section>
+
+      <section class="roi-section" id="calculator" aria-labelledby="roi-title">
+        <div class="roi-copy" data-reveal="">
+          <h2 id="roi-title">您的船员支付成本比您想象的要高。</h2>
+          <p>现金上船、外汇损失、银行转账和人工对账会迅速累积。输入船队规模，看看数字化船员支付能优化多少成本。</p>
+          <a class="primary-button" href="#demo">请求投资回报率分析</a>
+        </div>
+        <div class="roi-card" data-reveal="">
+          <div class="roi-card-head"><span>CREW PAY ROI</span><b>成本测算</b></div>
+          <form data-calculator="">
+            <label><span>每月发薪船员人数</span><input name="crew" type="number" min="1" value="380"></label>
+            <label><span>人均跨境付款笔数</span><input name="transfers" type="number" min="0" step="0.5" value="1.5"></label>
+            <label><span>单笔综合成本（元）</span><input name="fee" type="number" min="0" value="86"></label>
+            <label><span>月度现金与对账成本（元）</span><input name="cash" type="number" min="0" value="68000"></label>
+            <label class="roi-range"><span>预计可优化比例</span><input name="saving" type="range" min="10" max="80" value="42"><output data-saving-output="">42%</output></label>
+          </form>
+          <div class="roi-result"><span>预计每月可优化</span><strong data-monthly-saving="">¥49,148</strong><p data-yearly-saving="">年化约 ¥589,776</p></div>
+        </div>
+      </section>
+
+      <section class="account-intro" id="crew-account" aria-labelledby="account-intro-title">
+        <div class="display-title" data-reveal=""><h2 id="account-intro-title">介绍 <span>海薪通船员账户</span></h2></div>
+      </section>
+
+      <section class="account-stage">
+        <div class="account-heading" data-reveal=""><span>介绍</span><strong>海薪通 船员账户</strong></div>
+        <div class="account-layout">
+          <div class="account-device" data-reveal="">
+            <div class="app-phone large-phone" aria-hidden="true">
+              <div class="phone-bar"><span></span><b>海薪通</b><i>USD</i></div><p>Hello, 海员</p><strong>$6,850.00</strong>
+              <div class="round-actions"><i>汇</i><i>兑</i><i>卡</i></div>
+              <div class="app-list"><span>工资到账 <b>+ $4,000.00</b></span><span>家汇转账 <b>- $1,000.00</b></span><span>USD 兑换 CNY <b>- $500.00</b></span><span>ATM 取现 <b>- HKD 1,500</b></span></div>
+            </div>
+            <div class="physical-card" aria-label="U卡示意"><span>海薪通 U Card</span><i></i><b>•••• 0826</b><em><u></u><u></u></em></div>
+          </div>
+          <div class="account-copy" data-reveal="">
+            <h2>即时、可靠且准确的船员支付</h2>
+            <p>船员可以管理工资、汇款回家、多币种兑换，以及 U 卡在全球港口的消费与取现。</p>
+            <ul class="check-list"><li>减少以现金支付船员薪酬的需求</li><li>船员自主管理汇款回家与换汇</li><li>工资可直达银行或船员账户</li><li>U卡支持全球消费和 ATM 取现</li></ul>
+            <a class="primary-button" href="#demo">预约演示</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="money-control" id="u-card" aria-labelledby="money-title">
+        <div class="money-head" data-reveal=""><h2 id="money-title">让船员在海上全面掌控他们的资金</h2><p>把船员薪酬支付到船员账户，为他们提供从海上到岸边的财务自主权。</p><a class="primary-button" href="#demo">船员财务服务</a></div>
+        <div class="benefit-panels">
+          <article class="benefit-panel" data-reveal="">
+            <div class="benefit-copy"><h3>即时获取薪资支付</h3><p>船员可以随时随地访问、兑换和转移他们的工资。</p><ul class="check-list compact"><li>加速船员账户付款</li><li>船员自助资金转账</li><li>降低运营成本</li></ul></div>
+            <div class="transfer-visual" aria-hidden="true"><span>工资已到账</span><strong>USD 4,200.00</strong><i>可用余额已更新</i></div>
+          </article>
+          <article class="benefit-panel" data-reveal="">
+            <div class="benefit-copy"><h3>从港口到港口的全球支出</h3><p>船员使用 U 卡在全球港口、线上商户和 ATM 网络顺畅消费与取现。</p><ul class="check-list compact"><li>减少船舶现金需求</li><li>支持全球消费和 ATM 取现</li><li>交易提醒与异常追踪</li></ul></div>
+            <div class="card-spend-visual" aria-hidden="true"><div class="mini-u-card"><span>U Card</span><b>GLOBAL</b><i>•••• 0826</i></div><div class="merchant-list"><span>港口商店 <b>SGD 68</b></span><span>ATM Withdrawal <b>HKD 1,500</b></span><span>Online purchase <b>USD 42</b></span></div></div>
+          </article>
+          <article class="benefit-panel" id="coverage" data-reveal="">
+            <div class="benefit-copy"><div class="coverage-icons" aria-hidden="true"><span class="country-icons"><i class="country-flag flag-cn"></i><i class="country-flag flag-us"></i><i class="country-flag flag-eu"></i><i class="country-flag flag-jp"></i></span><span class="currency-icons"><i>¥</i><i>$</i><i>€</i><i>₱</i></span></div><h3>几十个国家，几十种币种</h3><p>按船员国籍、工资币种和家汇目的地配置支付路径，让每一笔钱都更清晰。</p><ul class="check-list compact"><li>覆盖几十个国家和地区</li><li>支持几十种付款与结算币种</li><li>船员自主管理多币种余额</li></ul></div>
+            <div class="currency-visual" aria-hidden="true"><div><span class="currency-badge"><i>$</i><small>USD</small></span><b>12,460.00</b></div><div><span class="currency-badge"><i>¥</i><small>CNY</small></span><b>48,620.00</b></div><div><span class="currency-badge"><i>€</i><small>EUR</small></span><b>3,180.00</b></div><div><span class="currency-badge"><i>S$</i><small>SGD</small></span><b>2,940.00</b></div><div><span class="currency-badge"><i>₱</i><small>PHP</small></span><b>96,500.00</b></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="bank-payments" aria-labelledby="bank-title">
+        <div class="bank-copy" data-reveal=""><h2 id="bank-title">直接将全球工资支付到银行账户</h2><p>使用精简的支付工具，把工资、预支、补贴和家汇直接发送到船员或家属银行账户。</p><ul class="check-list compact"><li>自动化船员工资支付和现金预支</li><li>实现全球合规支付</li><li>简单设置与强大报告功能</li></ul><a class="primary-button" href="#demo">了解更多</a></div>
+        <div class="payments-screen" data-reveal="" aria-label="付款批次界面示意"><div class="screen-head"><b>Payment batches</b><span>99.2% 批次完成</span></div><div class="screen-row head"><span>船舶</span><span>币种</span><span>状态</span></div><div class="screen-row"><span>Xin Yuan 8</span><span>USD / CNY</span><b>已付款</b></div><div class="screen-row"><span>Pacific Star</span><span>USD / PHP</span><b>已付款</b></div><div class="screen-row"><span>Hai Sheng</span><span>CNY / SGD</span><b class="review">审核中</b></div><div class="screen-row"><span>Oriental Pearl</span><span>USD / EUR</span><b>已付款</b></div></div>
+      </section>
+
+      <section class="quote" aria-label="客户评价" data-reveal="">
+        <blockquote>“以前每次靠港都要协调现金、银行和代理。现在工资直接进入船员账户，U卡交易与回单也能统一追踪，船员无需等待靠港就能支配自己的资金。”</blockquote>
+        <p><span>船</span><b>中国远洋船队船长</b><small>船员账户客户</small></p>
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <div class="faq-head" data-reveal=""><h2 id="faq-title">常见问题解答与专业洞察</h2><a class="primary-button" href="#demo">咨询支付专家</a></div>
+        <div class="faq-list" data-reveal="">
+          <details open=""><summary>海薪通适合哪些中国航运企业？</summary><p>适合中国船东、船管公司、船员外派机构、远洋船队和需要批量处理船员工资、家汇及备用金的财务团队。</p></details>
+          <details><summary>U卡可以在哪些场景使用？</summary><p>U卡支持网络覆盖下的全球商户消费、线上支付和 ATM 取现。实际可用范围、限额及费用以发卡方案和当地网络为准。</p></details>
+          <details><summary>支持多少国家和币种？</summary><p>平台支持几十个国家/地区与几十种付款、结算及消费币种。具体路径取决于收款国家、银行信息和合规审核结果。</p></details>
+          <details><summary>工资可以直接支付到家属账户吗？</summary><p>可以按企业规则拆分到船员账户、本人银行账户或指定家属账户，并保留审批、状态和回单。</p></details>
+          <details><summary>如何减少船上现金？</summary><p>将工资、预支和部分备用金转为账户化支付，让船员通过移动端转账、消费或取现，减少现金押运、保管与签收。</p></details>
+        </div>
+      </section>
+
+      <section class="insight-banner" aria-label="船员支付指南"><div data-reveal=""><span>船员支付指南</span><h2>把工资发放、U卡与多币种支付放进一套流程</h2><p>面向中国船东和船舶管理公司的实用实施清单。</p><a class="primary-button" href="#demo">获取方案</a></div></section>
+
+      <section class="final-cta" aria-labelledby="final-title"><div data-reveal=""><h2 id="final-title">您的船员支付解决方案已准备就绪</h2><p>留下业务邮箱，与我们的航运支付顾问预约演示。</p><form class="lead-form final-form" data-demo-form=""><label class="sr-only" for="footer-email">您的工作邮箱</label><input id="footer-email" name="email" type="email" placeholder="您的工作邮箱" autocomplete="email" required=""><button type="submit">预约演示</button><span class="form-status" role="status" data-form-status=""></span></form></div></section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#top"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>海薪通</span></a>
+      <div><b>船员支付</b><a href="#platform">薪资发放</a><a href="#crew-account">船员账户</a><a href="#u-card">U卡服务</a></div>
+      <div><b>企业服务</b><a href="#coverage">国家与币种</a><a href="#calculator">成本测算</a><a href="#faq">常见问题</a></div>
+      <p>面向中国船东与中国船员的全球薪资支付平台<br>© 2026 海薪通</p>
+    </footer>
+    <script src="pay-crew.js"></script>
+  </body>
+</html>

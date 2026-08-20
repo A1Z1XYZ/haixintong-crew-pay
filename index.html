@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="海薪通船运公司 SaaS 支付后台，覆盖船员薪资批次、跨境付款审批、多币种余额、U卡支出、对账与风险监控。" />
+    <title>海薪通 | 船运公司 SaaS 支付后台</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" data-sidebar>
+        <a class="brand" href="#overview" aria-label="海薪通支付后台">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>
+            <b>海薪通</b>
+            <small>OceanPay Console</small>
+          </span>
+        </a>
+
+        <nav class="side-nav" aria-label="后台导航">
+          <a class="is-active" href="#overview">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4v9Zm10 7h6V4h-6v16ZM4 20h6v-4H4v4Z"/></svg>
+            总览
+          </a>
+          <a href="#batches">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm0-2a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2H3V5Zm4 8h5m-5 4h8m1-6h2"/></svg>
+            支付批次
+          </a>
+          <a href="#vessels">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18l-2 3H5l-2-3Zm2-5 3-7h8l3 7h2v3H3v-3h2Zm5-5-2 5h8l-2-5h-4Z"/></svg>
+            船舶与船员
+          </a>
+          <a href="#cards">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 4h18V7H4v2Zm3 5h5v2H7v-2Z"/></svg>
+            U卡与账户
+          </a>
+          <a href="#reconcile">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5V4Zm3 4h8v2H8V8Zm0 4h8v2H8v-2Zm0 4h5v2H8v-2Z"/></svg>
+            对账中心
+          </a>
+          <a href="#risk">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 20h20L12 2Zm1 14h-2v2h2v-2Zm0-7h-2v5h2V9Z"/></svg>
+            风控与合规
+          </a>
+        </nav>
+
+        <div class="side-brief">
+          <span>今日付款窗口</span>
+          <strong>14:00 - 18:30</strong>
+          <p>东南亚、本币清算和 U卡补款路径运行正常。</p>
+        </div>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <button class="icon-button menu-button" type="button" aria-label="打开导航" title="打开导航" data-menu-toggle>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v2H4V7Zm0 4h16v2H4v-2Zm0 4h16v2H4v-2Z"/></svg>
+          </button>
+          <div class="topbar-title">
+            <span>支付后台</span>
+            <strong>船员薪资与跨境付款</strong>
+          </div>
+          <label class="search">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 20-5.3-5.3a7 7 0 1 0-1.4 1.4L20 21l1-1ZM5 10a5 5 0 1 1 10 0A5 5 0 0 1 5 10Z"/></svg>
+            <span class="sr-only">搜索批次、船舶或船员</span>
+            <input type="search" placeholder="搜索批次、船舶、船员" data-search />
+          </label>
+          <div class="topbar-actions">
+            <button class="ghost-button" type="button" data-action="导出今日付款清单">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2Zm6-18h2v10l4-4 1.4 1.4L12 15.8 5.6 9.4 7 8l4 4V2Z"/></svg>
+              导出
+            </button>
+            <button class="primary-button" type="button" data-action="新建船员薪资批次">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5Z"/></svg>
+              新建批次
+            </button>
+          </div>
+        </header>
+
+        <main id="demo">
+          <section class="workspace-head" id="overview" aria-labelledby="overview-title">
+            <div>
+              <span class="eyebrow">Fleet payment command center</span>
+              <h1 id="overview-title">船运公司 SaaS 支付后台</h1>
+              <p>集中处理船员工资、家汇、U卡补款、跨境银行直付和付款后对账。</p>
+            </div>
+            <div class="period-control" role="group" aria-label="时间范围">
+              <button class="is-active" type="button" data-range="今日">今日</button>
+              <button type="button" data-range="本周">本周</button>
+              <button type="button" data-range="本月">本月</button>
+            </div>
+          </section>
+
+          <section class="metric-grid" aria-label="核心支付指标">
+            <article class="metric-card accent-cyan">
+              <span>待放款金额</span>
+              <strong>USD 2.84M</strong>
+              <p><b>+12.4%</b> 较昨日增加，含 8 个工资批次</p>
+            </article>
+            <article class="metric-card accent-amber">
+              <span>待审批批次</span>
+              <strong>17</strong>
+              <p><b>5</b> 个超过公司 SLA，需要财务复核</p>
+            </article>
+            <article class="metric-card accent-green">
+              <span>今日成功率</span>
+              <strong>99.18%</strong>
+              <p><b>1,248</b> 笔付款已进入银行或船员账户</p>
+            </article>
+            <article class="metric-card accent-coral">
+              <span>异常交易</span>
+              <strong>9</strong>
+              <p><b>3</b> 笔命中制裁名单相似名，需要人工确认</p>
+            </article>
+          </section>
+
+          <section class="command-grid">
+            <div class="main-column">
+              <section class="panel payment-flow" id="batches" aria-labelledby="batches-title">
+                <div class="panel-head">
+                  <div>
+                    <span class="eyebrow">Payment batches</span>
+                    <h2 id="batches-title">船员薪资批次</h2>
+                  </div>
+                  <div class="segmented" role="tablist" aria-label="批次筛选">
+                    <button class="is-active" type="button" role="tab" aria-selected="true" data-filter="all">全部</button>
+                    <button type="button" role="tab" aria-selected="false" data-filter="pending">待审批</button>
+                    <button type="button" role="tab" aria-selected="false" data-filter="processing">处理中</button>
+                    <button type="button" role="tab" aria-selected="false" data-filter="risk">异常</button>
+                  </div>
+                </div>
+
+                <div class="flow-summary">
+                  <div class="flow-step is-done">
+                    <span>01</span>
+                    <strong>工资单导入</strong>
+                    <small>24 批次</small>
+                  </div>
+                  <div class="flow-step is-active">
+                    <span>02</span>
+                    <strong>财务审批</strong>
+                    <small>17 待处理</small>
+                  </div>
+                  <div class="flow-step">
+                    <span>03</span>
+                    <strong>银行放款</strong>
+                    <small>39 处理中</small>
+                  </div>
+                  <div class="flow-step">
+                    <span>04</span>
+                    <strong>回单归档</strong>
+                    <small>92% 已匹配</small>
+                  </div>
+                </div>
+
+                <div class="table-shell">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>批次</th>
+                        <th>船舶 / 航线</th>
+                        <th>船员</th>
+                        <th>金额</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody data-batch-table>
+                      <tr data-status="pending" data-name="八月船员工资 远洋轮 HXT Fortune 新加坡">
+                        <td><button class="table-link" type="button" data-batch="HXT-0820-A">HXT-0820-A</button><span>八月船员工资</span></td>
+                        <td><strong>HXT Fortune</strong><span>上海 → 新加坡</span></td>
+                        <td>63</td>
+                        <td><strong>USD 118,400</strong><span>CNY 预兑 28%</span></td>
+                        <td><mark class="status pending">待审批</mark></td>
+                        <td><button class="mini-button" type="button" data-approve>审批</button></td>
+                      </tr>
+                      <tr data-status="processing" data-name="家汇拆分 Pacific Star 马尼拉">
+                        <td><button class="table-link" type="button" data-batch="PCS-0819-R">PCS-0819-R</button><span>家汇拆分</span></td>
+                        <td><strong>Pacific Star</strong><span>厦门 → 马尼拉</span></td>
+                        <td>41</td>
+                        <td><strong>USD 76,920</strong><span>PHP 到账</span></td>
+                        <td><mark class="status processing">银行处理中</mark></td>
+                        <td><button class="mini-button muted" type="button" data-action="查看银行回执">查看</button></td>
+                      </tr>
+                      <tr data-status="risk" data-name="备用金补款 Hai Sheng 雅加达">
+                        <td><button class="table-link" type="button" data-batch="HIS-0819-C">HIS-0819-C</button><span>备用金补款</span></td>
+                        <td><strong>Hai Sheng</strong><span>宁波 → 雅加达</span></td>
+                        <td>28</td>
+                        <td><strong>CNY 412,600</strong><span>IDR 路径待确认</span></td>
+                        <td><mark class="status risk">风控复核</mark></td>
+                        <td><button class="mini-button danger" type="button" data-action="打开风控复核">复核</button></td>
+                      </tr>
+                      <tr data-status="pending" data-name="离船结算 Oriental Pearl 釜山">
+                        <td><button class="table-link" type="button" data-batch="ORP-0818-L">ORP-0818-L</button><span>离船结算</span></td>
+                        <td><strong>Oriental Pearl</strong><span>青岛 → 釜山</span></td>
+                        <td>19</td>
+                        <td><strong>USD 44,780</strong><span>KRW 代付</span></td>
+                        <td><mark class="status pending">待审批</mark></td>
+                        <td><button class="mini-button" type="button" data-approve>审批</button></td>
+                      </tr>
+                      <tr data-status="processing" data-name="U卡补款 Blue Harbor 鹿特丹">
+                        <td><button class="table-link" type="button" data-batch="BLH-0818-U">BLH-0818-U</button><span>U卡补款</span></td>
+                        <td><strong>Blue Harbor</strong><span>深圳 → 鹿特丹</span></td>
+                        <td>72</td>
+                        <td><strong>EUR 96,500</strong><span>多币种钱包</span></td>
+                        <td><mark class="status processing">清算中</mark></td>
+                        <td><button class="mini-button muted" type="button" data-action="查看补款状态">查看</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section class="panel vessel-panel" id="vessels" aria-labelledby="vessels-title">
+                <div class="panel-head">
+                  <div>
+                    <span class="eyebrow">Vessel payroll</span>
+                    <h2 id="vessels-title">本周船舶付款计划</h2>
+                  </div>
+                  <button class="ghost-button compact" type="button" data-action="同步船员名单">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.7 6.3A8 8 0 0 0 4.3 10H2l3 3 3-3H6.4a6 6 0 0 1 9.9-2.3l1.4-1.4ZM19 11l-3 3h1.6a6 6 0 0 1-9.9 2.3l-1.4 1.4A8 8 0 0 0 19.7 14H22l-3-3Z"/></svg>
+                    同步
+                  </button>
+                </div>
+                <div class="vessel-list">
+                  <article>
+                    <div>
+                      <strong>HXT Fortune</strong>
+                      <span>63 名船员 · 4 种币种 · 新加坡靠港</span>
+                    </div>
+                    <meter value="82" min="0" max="100"></meter>
+                    <b>82%</b>
+                  </article>
+                  <article>
+                    <div>
+                      <strong>Pacific Star</strong>
+                      <span>41 名船员 · 家汇拆分 · 菲律宾路径</span>
+                    </div>
+                    <meter value="64" min="0" max="100"></meter>
+                    <b>64%</b>
+                  </article>
+                  <article>
+                    <div>
+                      <strong>Blue Harbor</strong>
+                      <span>72 名船员 · U卡补款 · 欧元结算</span>
+                    </div>
+                    <meter value="91" min="0" max="100"></meter>
+                    <b>91%</b>
+                  </article>
+                </div>
+              </section>
+            </div>
+
+            <aside class="side-column">
+              <section class="panel detail-panel" aria-labelledby="detail-title">
+                <div class="panel-head tight">
+                  <div>
+                    <span class="eyebrow">Selected batch</span>
+                    <h2 id="detail-title" data-detail-title>HXT-0820-A</h2>
+                  </div>
+                  <mark class="status pending" data-detail-status>待审批</mark>
+                </div>
+                <dl class="detail-list">
+                  <div><dt>付款总额</dt><dd data-detail-amount>USD 118,400</dd></div>
+                  <div><dt>收款人</dt><dd data-detail-crew>63 名船员</dd></div>
+                  <div><dt>审批链路</dt><dd>财务主管 → 船管经理 → 出纳</dd></div>
+                  <div><dt>预计到账</dt><dd>2026-08-20 18:30</dd></div>
+                </dl>
+                <div class="approval-stack">
+                  <button class="primary-button full" type="button" data-action="提交当前批次审批">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 16.2-3.5-3.5L4 14.2 9 19 20 8l-1.5-1.5L9 16.2Z"/></svg>
+                    提交审批
+                  </button>
+                  <button class="ghost-button full" type="button" data-action="下载付款明细">下载付款明细</button>
+                </div>
+              </section>
+
+              <section class="panel risk-panel" id="risk" aria-labelledby="risk-title">
+                <div class="panel-head tight">
+                  <div>
+                    <span class="eyebrow">Compliance</span>
+                    <h2 id="risk-title">风控提示</h2>
+                  </div>
+                  <strong class="risk-count">9</strong>
+                </div>
+                <ul class="alert-list">
+                  <li><b>相似姓名命中</b><span>3 笔收款人需人工确认</span></li>
+                  <li><b>超限付款</b><span>Hai Sheng 备用金超过单船阈值</span></li>
+                  <li><b>资料缺口</b><span>7 名船员护照将在 30 天内到期</span></li>
+                </ul>
+              </section>
+
+              <section class="photo-panel" aria-label="港口付款窗口">
+                <img src="assets/port-blue-hour.png" alt="夜色中的集装箱港口与靠泊货轮" />
+                <div>
+                  <span>Port window</span>
+                  <strong>靠港前 6 小时完成工资路径锁定</strong>
+                </div>
+              </section>
+            </aside>
+          </section>
+
+          <section class="lower-grid">
+            <section class="panel account-panel" id="cards" aria-labelledby="cards-title">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Crew account & U card</span>
+                  <h2 id="cards-title">船员账户与 U卡支出</h2>
+                </div>
+                <button class="ghost-button compact" type="button" data-action="查看账户流水">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5V4Zm3 4h8v2H8V8Zm0 4h8v2H8v-2Zm0 4h5v2H8v-2Z"/></svg>
+                  流水
+                </button>
+              </div>
+              <div class="account-layout">
+                <div class="wallet-card" aria-label="U卡余额">
+                  <span>OceanPay U Card</span>
+                  <strong>USD 684,920.00</strong>
+                  <small>可用余额 · 12 艘船舶共享额度</small>
+                  <i>•••• 0826</i>
+                </div>
+                <div class="spend-list">
+                  <article><span>港口物资采购</span><b>SGD 6,820</b><mark class="status processing">待入账</mark></article>
+                  <article><span>ATM 取现</span><b>HKD 28,500</b><mark class="status ok">已归档</mark></article>
+                  <article><span>线上汇款回家</span><b>PHP 1,240,000</b><mark class="status ok">已到账</mark></article>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel reconcile-panel" id="reconcile" aria-labelledby="reconcile-title">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Reconciliation</span>
+                  <h2 id="reconcile-title">付款后对账</h2>
+                </div>
+                <span class="sync-state">12 分钟前同步</span>
+              </div>
+              <div class="reconcile-chart" aria-label="对账进度">
+                <div style="--value: 92%"><span>银行回执</span><b>92%</b></div>
+                <div style="--value: 86%"><span>船员确认</span><b>86%</b></div>
+                <div style="--value: 74%"><span>发票匹配</span><b>74%</b></div>
+                <div style="--value: 68%"><span>异常关闭</span><b>68%</b></div>
+              </div>
+              <label class="limit-control">
+                <span>单船备用金预警线</span>
+                <input type="range" min="200000" max="900000" step="50000" value="450000" data-limit />
+                <output data-limit-output>CNY 450,000</output>
+              </label>
+            </section>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+    <script src="script.js"></script>
+  </body>
+</html>

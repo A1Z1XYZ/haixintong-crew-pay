@@ -1,0 +1,5 @@
+.playwright-cli/
+.ppt-build*/
+output/
+*.pptx
+*.pptx.inspect.ndjson
